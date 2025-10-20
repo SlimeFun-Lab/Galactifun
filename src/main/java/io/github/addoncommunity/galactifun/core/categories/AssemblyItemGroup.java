@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.annotation.Nonnull;
 
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -59,8 +61,8 @@ public final class AssemblyItemGroup extends FlexItemGroup {
             menu.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
 
-        menu.addItem(1, new CustomItemStack(ChestMenuUtils.getBackButton(p, "",
-                ChatColor.GRAY + Slimefun.getLocalization().getMessage(p, "guide.back.guide")))
+        menu.addItem(1, ChestMenuUtils.getBackButton(p, "",
+                ChatColor.GRAY + Slimefun.getLocalization().getMessage(p, "guide.back.guide"))
         );
         menu.addMenuClickHandler(1, (p12, slot, item, action) -> {
             profile.getGuideHistory().goBack(Slimefun.getRegistry().getSlimefunGuide(layout));
@@ -69,9 +71,18 @@ public final class AssemblyItemGroup extends FlexItemGroup {
 
         int i = 9;
         for (Map.Entry<ItemStack[], ItemStack> item : AssemblyTable.TYPE.recipes().entrySet()) {
-            if (item.getValue() instanceof SlimefunItemStack slimefunItemStack) {
-                Map.Entry<SlimefunItemStack, ItemStack[]> newEntry = new AbstractMap.SimpleImmutableEntry<>(slimefunItemStack, item.getKey());
-                menu.addItem(i++, item.getValue(), (p1, slot, item1, action) -> {
+            ItemStack out = item.getValue();
+            SlimefunItem sf = SlimefunItem.getByItem(out);
+
+            if (sf != null) {
+                ItemStack base = sf.getItem().clone();
+                SlimefunItemStack sfStack = new SlimefunItemStack(sf.getId(), sf.getItem().clone());
+                sfStack.setItemMeta(base.getItemMeta());
+
+                Map.Entry<SlimefunItemStack, ItemStack[]> newEntry =
+                        new AbstractMap.SimpleImmutableEntry<>(sfStack, item.getKey());
+
+                menu.addItem(i++, out, (p1, slot, item1, action) -> {
                     if (layout == SlimefunGuideMode.CHEAT_MODE) {
                         p1.getInventory().addItem(item1.clone());
                     } else {
@@ -89,8 +100,8 @@ public final class AssemblyItemGroup extends FlexItemGroup {
         ChestMenu menu = new ChestMenu("Recipe for " + item.getKey().getDisplayName());
         menu.setEmptySlotsClickable(false);
 
-        menu.addItem(0, new CustomItemStack(ChestMenuUtils.getBackButton(p, "",
-                ChatColor.GRAY + Slimefun.getLocalization().getMessage(p, "guide.back.guide")))
+        menu.addItem(0, ChestMenuUtils.getBackButton(p, "",
+                ChatColor.GRAY + Slimefun.getLocalization().getMessage(p, "guide.back.guide"))
         );
         menu.addMenuClickHandler(0, (p12, slot, it, action) -> {
             this.open(p, profile, SlimefunGuideMode.SURVIVAL_MODE);
@@ -109,8 +120,8 @@ public final class AssemblyItemGroup extends FlexItemGroup {
             }
         }
 
-        menu.addItem(18, BaseItems.ASSEMBLY_TABLE, ChestMenuUtils.getEmptyClickHandler());
-        menu.addItem(26, item.getKey(), ChestMenuUtils.getEmptyClickHandler());
+        menu.addItem(18, BaseItems.ASSEMBLY_TABLE.asOne(), ChestMenuUtils.getEmptyClickHandler());
+        menu.addItem(26, item.getKey().asOne(), ChestMenuUtils.getEmptyClickHandler());
 
         menu.open(p);
     }

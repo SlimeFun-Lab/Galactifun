@@ -11,8 +11,6 @@ import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
-import org.bukkit.plugin.PluginDescriptionFile;
-import org.bukkit.plugin.java.JavaPluginLoader;
 
 import io.github.addoncommunity.galactifun.api.worlds.AlienWorld;
 import io.github.addoncommunity.galactifun.api.worlds.PlanetaryWorld;
@@ -54,11 +52,6 @@ public final class Galactifun extends AbstractAddon {
 
     public Galactifun() {
         super("Slimefun-Addon-Community", "Galactifun", "master", "auto-update");
-    }
-
-    public Galactifun(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
-        super(loader, description, dataFolder, file, "Slimefun-Addon-Community", "Galactifun", "master", "auto-update");
-        isTest = true;
     }
 
     public static AlienManager alienManager() {

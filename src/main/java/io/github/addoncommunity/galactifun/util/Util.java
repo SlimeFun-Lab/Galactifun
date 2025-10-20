@@ -26,6 +26,8 @@ import org.bukkit.block.BlockFace;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition;
 import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
 
+import org.bukkit.inventory.ItemStack;
+
 /**
  * Utilities
  *
@@ -148,5 +150,12 @@ public final class Util {
         } else {
             return "%.3f km".formatted(distance * KM_PER_LY);
         }
+    }
+
+    public static ItemStack withAmount(ItemStack base, int amount) {
+        if (base == null) return null;
+        ItemStack copy = base.clone();
+        copy.setAmount(amount);
+        return copy;
     }
 }

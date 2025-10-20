@@ -25,18 +25,18 @@ public class Electrolyzer extends AContainer {
 
     @Override
     protected void registerDefaultRecipes() {
-        registerRecipe(new ItemStack(Material.WATER_BUCKET), Gas.WATER.item(), new ItemStack(Material.BUCKET));
-        registerRecipe(Gas.WATER.item(), Gas.HYDROGEN.item().asQuantity(2), Gas.OXYGEN.item());
+        registerRecipe(new ItemStack(Material.WATER_BUCKET), Gas.WATER.item().asOne(), new ItemStack(Material.BUCKET));
+        registerRecipe(Gas.WATER.item().asOne(), Gas.HYDROGEN.item().asQuantity(2), Gas.OXYGEN.item().asOne());
 
-        registerRecipe(SlimefunItems.OIL_BUCKET, Gas.HYDROCARBONS.item(), new ItemStack(Material.BUCKET));
-        registerRecipe(Gas.HYDROCARBONS.item(), Gas.METHANE.item().asQuantity(6));
-        registerRecipe(Gas.METHANE.item(), Gas.HYDROGEN.item().asQuantity(4), SlimefunItems.CARBON);
-        registerRecipe(Gas.CARBON_DIOXIDE.item(), Gas.OXYGEN.item().asQuantity(2), SlimefunItems.CARBON);
+        registerRecipe(SlimefunItems.OIL_BUCKET.asOne(), Gas.HYDROCARBONS.item().asOne(), new ItemStack(Material.BUCKET));
+        registerRecipe(Gas.HYDROCARBONS.item().asOne(), Gas.METHANE.item().asQuantity(6));
+        registerRecipe(Gas.METHANE.item().asOne(), Gas.HYDROGEN.item().asQuantity(4), SlimefunItems.CARBON.asOne());
+        registerRecipe(Gas.CARBON_DIOXIDE.item().asOne(), Gas.OXYGEN.item().asQuantity(2), SlimefunItems.CARBON.asOne());
 
-        registerRecipe(Gas.AMMONIA.item(), Gas.HYDROGEN.item().asQuantity(3), Gas.NITROGEN.item());
+        registerRecipe(Gas.AMMONIA.item().asOne(), Gas.HYDROGEN.item().asQuantity(3), Gas.NITROGEN.item().asOne());
 
-        registerRecipe(BaseMats.MARS_DUST, SlimefunItems.IRON_DUST.asQuantity(2), Gas.OXYGEN.item().asQuantity(3));
-        registerRecipe(BaseMats.MOON_DUST, Gas.HELIUM.item().asQuantity(3));
+        registerRecipe(BaseMats.MARS_DUST.asOne(), SlimefunItems.IRON_DUST.asQuantity(2), Gas.OXYGEN.item().asQuantity(3));
+        registerRecipe(BaseMats.MOON_DUST.asOne(), Gas.HELIUM.item().asQuantity(3));
     }
 
     private void registerRecipe(ItemStack in, ItemStack... out) {

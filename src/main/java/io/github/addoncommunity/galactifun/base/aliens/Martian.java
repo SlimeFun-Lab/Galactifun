@@ -41,7 +41,7 @@ public final class Martian extends Alien<ZombieVillager> {
         // Fixes the sword
         this.trades.put(Material.IRON_SWORD.name(), new ItemStack(Material.IRON_SWORD));
         this.trades.put(Material.IRON_ORE.name(), new ItemStack(Material.IRON_INGOT));
-        this.trades.put(SlimefunItems.REINFORCED_PLATE.getItemId(), BaseMats.TUNGSTEN_INGOT);
+        this.trades.put(SlimefunItems.REINFORCED_PLATE.getItemId(), BaseMats.TUNGSTEN_INGOT.asOne());
     }
 
     @Override
@@ -86,7 +86,7 @@ public final class Martian extends Alien<ZombieVillager> {
             LivingEntity entity = (LivingEntity) e.getRightClicked();
             Objects.requireNonNull(entity.getEquipment()).setItemInOffHand(item);
             entity.addPotionEffect(new PotionEffect(
-                    PotionEffectType.SLOW,
+                    PotionEffectType.SLOWNESS,
                     Integer.MAX_VALUE,
                     100,
                     false,
@@ -102,7 +102,7 @@ public final class Martian extends Alien<ZombieVillager> {
                     entity.getWorld().dropItemNaturally(entity.getLocation(), trade.clone());
 
                     entity.getEquipment().setItemInOffHand(null);
-                    entity.removePotionEffect(PotionEffectType.SLOW);
+                    entity.removePotionEffect(PotionEffectType.SLOWNESS);
                 }
             });
         }

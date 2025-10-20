@@ -33,13 +33,13 @@ public final class FusionReactor extends Reactor {
     @Nonnull
     @Override
     public ItemStack getFuelIcon() {
-        return BaseMats.FUSION_PELLET;
+        return BaseMats.FUSION_PELLET.asOne();
     }
 
     @Nonnull
     @Override
     public ItemStack getProgressBar() {
-        return SlimefunItems.LAVA_CRYSTAL;
+        return SlimefunItems.LAVA_CRYSTAL.asOne();
     }
 
     @Override

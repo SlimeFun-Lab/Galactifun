@@ -319,153 +319,153 @@ public final class BaseMats {
         worldItem(SULFUR_BLOCK, BaseUniverse.VENUS, BaseUniverse.IO);
         worldItem(VENTSTONE, BaseUniverse.VENUS);
         worldItem(LASERITE_ORE, BaseUniverse.TITAN);
-        component(VOLCANIC_INGOT, RecipeType.SMELTERY, VENTSTONE);
+        component(VOLCANIC_INGOT, RecipeType.SMELTERY, VENTSTONE.asOne());
         component(ALUMINUM_COMPOSITE, RecipeType.SMELTERY,
-                SlimefunItems.ALUMINUM_INGOT, SlimefunItems.MAGNESIUM_DUST, SlimefunItems.ZINC_DUST,
-                SlimefunItems.TIN_DUST, SlimefunItems.ALUMINUM_DUST
+                SlimefunItems.ALUMINUM_INGOT.asOne(), SlimefunItems.MAGNESIUM_DUST.asOne(), SlimefunItems.ZINC_DUST.asOne(),
+                SlimefunItems.TIN_DUST.asOne(), SlimefunItems.ALUMINUM_DUST.asOne()
         );
-        component(TUNGSTEN_INGOT, RecipeType.SMELTERY, FALLEN_METEOR);
-        component(ALUMINUM_COMPOSITE_SHEET, RecipeType.COMPRESSOR, new SlimefunItemStack(ALUMINUM_COMPOSITE, 8));
-        component(HEAVY_DUTY_SHEET, RecipeType.COMPRESSOR, new SlimefunItemStack(ALUMINUM_COMPOSITE_SHEET, 8));
-        component(SPACE_GRADE_PLATE, RecipeType.HEATED_PRESSURE_CHAMBER, HEAVY_DUTY_SHEET, TUNGSTEN_CARBIDE);
+        component(TUNGSTEN_INGOT, RecipeType.SMELTERY, FALLEN_METEOR.asOne());
+        component(ALUMINUM_COMPOSITE_SHEET, RecipeType.COMPRESSOR, ALUMINUM_COMPOSITE.asQuantity(8));
+        component(HEAVY_DUTY_SHEET, RecipeType.COMPRESSOR, ALUMINUM_COMPOSITE_SHEET.asQuantity(8));
+        component(SPACE_GRADE_PLATE, RecipeType.HEATED_PRESSURE_CHAMBER, HEAVY_DUTY_SHEET.asOne(), TUNGSTEN_CARBIDE.asOne());
         ((HeatedPressureChamber) SlimefunItems.HEATED_PRESSURE_CHAMBER.getItem()).registerRecipe(
                 20,
-                new ItemStack[]{ HEAVY_DUTY_SHEET, TUNGSTEN_CARBIDE},
-                new ItemStack[]{ SPACE_GRADE_PLATE }
+                new ItemStack[]{ HEAVY_DUTY_SHEET.asOne(), TUNGSTEN_CARBIDE.asOne()},
+                new ItemStack[]{ SPACE_GRADE_PLATE.asOne() }
         );
         ((HeatedPressureChamber) SlimefunItems.HEATED_PRESSURE_CHAMBER_2.getItem()).registerRecipe(
                 20,
-                new ItemStack[]{ HEAVY_DUTY_SHEET, TUNGSTEN_CARBIDE},
-                new ItemStack[]{ SPACE_GRADE_PLATE }
+                new ItemStack[]{ HEAVY_DUTY_SHEET.asOne(), TUNGSTEN_CARBIDE.asOne()},
+                new ItemStack[]{ SPACE_GRADE_PLATE.asOne() }
         );
-        component(ULTRA_DUTY_SHEET, RecipeType.COMPRESSOR, new SlimefunItemStack(SPACE_GRADE_PLATE, 4));
-        component(GOLD_FOIL, RecipeType.COMPRESSOR, 4, SlimefunItems.GOLD_24K_BLOCK);
+        component(ULTRA_DUTY_SHEET, RecipeType.COMPRESSOR, SPACE_GRADE_PLATE.asQuantity(4));
+        component(GOLD_FOIL, RecipeType.COMPRESSOR, 4, SlimefunItems.GOLD_24K_BLOCK.asOne());
         component(REINFORCED_CHANNEL, RecipeType.ENHANCED_CRAFTING_TABLE, 8,
-                ALUMINUM_COMPOSITE_SHEET, null, ALUMINUM_COMPOSITE_SHEET,
-                ALUMINUM_COMPOSITE_SHEET, null, ALUMINUM_COMPOSITE_SHEET,
-                ALUMINUM_COMPOSITE_SHEET, null, ALUMINUM_COMPOSITE_SHEET
+                ALUMINUM_COMPOSITE_SHEET.asOne(), null, ALUMINUM_COMPOSITE_SHEET.asOne(),
+                ALUMINUM_COMPOSITE_SHEET.asOne(), null, ALUMINUM_COMPOSITE_SHEET.asOne(),
+                ALUMINUM_COMPOSITE_SHEET.asOne(), null, ALUMINUM_COMPOSITE_SHEET.asOne()
         );
         component(FAN_BLADE, RecipeType.ENHANCED_CRAFTING_TABLE,
-                null, SlimefunItems.STEEL_INGOT, null,
-                SlimefunItems.STEEL_INGOT, SlimefunItems.STEEL_INGOT, SlimefunItems.STEEL_INGOT,
-                null, SlimefunItems.STEEL_INGOT, null
+                null, SlimefunItems.STEEL_INGOT.asOne(), null,
+                SlimefunItems.STEEL_INGOT.asOne(), SlimefunItems.STEEL_INGOT.asOne(), SlimefunItems.STEEL_INGOT.asOne(),
+                null, SlimefunItems.STEEL_INGOT.asOne(), null
         );
         component(NOZZLE, RecipeType.ENHANCED_CRAFTING_TABLE, 2,
-                SlimefunItems.STEEL_INGOT, null, SlimefunItems.STEEL_INGOT,
-                SlimefunItems.STEEL_INGOT, null, SlimefunItems.STEEL_INGOT,
+                SlimefunItems.STEEL_INGOT.asOne(), null, SlimefunItems.STEEL_INGOT.asOne(),
+                SlimefunItems.STEEL_INGOT.asOne(), null, SlimefunItems.STEEL_INGOT.asOne(),
                 null, new ItemStack(Material.IRON_TRAPDOOR), null
         );
         component(FILTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-                SlimefunItems.CLOTH, new ItemStack(Material.CHARCOAL), SlimefunItems.CLOTH,
-                SlimefunItems.CLOTH, new ItemStack(Material.CHARCOAL), SlimefunItems.CLOTH,
-                SlimefunItems.CLOTH, new ItemStack(Material.CHARCOAL), SlimefunItems.CLOTH
+                SlimefunItems.CLOTH.asOne(), new ItemStack(Material.CHARCOAL), SlimefunItems.CLOTH.asOne(),
+                SlimefunItems.CLOTH.asOne(), new ItemStack(Material.CHARCOAL), SlimefunItems.CLOTH.asOne(),
+                SlimefunItems.CLOTH.asOne(), new ItemStack(Material.CHARCOAL), SlimefunItems.CLOTH.asOne()
         );
         component(OXYGEN_REGENERATOR, RecipeType.ENHANCED_CRAFTING_TABLE,
-                SlimefunItems.ELECTRO_MAGNET, REINFORCED_CHANNEL, FILTER,
-                NOZZLE, GOLD_FOIL, FILTER,
-                SlimefunItems.ELECTRO_MAGNET, REINFORCED_CHANNEL, FILTER
+                SlimefunItems.ELECTRO_MAGNET.asOne(), REINFORCED_CHANNEL.asOne(), FILTER.asOne(),
+                NOZZLE.asOne(), GOLD_FOIL.asOne(), FILTER.asOne(),
+                SlimefunItems.ELECTRO_MAGNET.asOne(), REINFORCED_CHANNEL.asOne(), FILTER.asOne()
         );
         component(SPARK_PLUG, true, RecipeType.ENHANCED_CRAFTING_TABLE,
-                null, SlimefunItems.STEEL_PLATE, SlimefunItems.NICKEL_INGOT,
-                SlimefunItems.ALUMINUM_INGOT, null, MUNPOWDER,
-                null, SlimefunItems.STEEL_PLATE, SlimefunItems.NICKEL_INGOT
+                null, SlimefunItems.STEEL_PLATE.asOne(), SlimefunItems.NICKEL_INGOT.asOne(),
+                SlimefunItems.ALUMINUM_INGOT.asOne(), null, MUNPOWDER.asOne(),
+                null, SlimefunItems.STEEL_PLATE.asOne(), SlimefunItems.NICKEL_INGOT.asOne()
         );
         component(SPARK_PLUG_2, true, RecipeType.ENHANCED_CRAFTING_TABLE,
-                null, SlimefunItems.STEEL_PLATE, SlimefunItems.NICKEL_INGOT,
-                TUNGSTEN_INGOT, null, MUNPOWDER,
-                null, SlimefunItems.STEEL_PLATE, SlimefunItems.NICKEL_INGOT
+                null, SlimefunItems.STEEL_PLATE.asOne(), SlimefunItems.NICKEL_INGOT.asOne(),
+                TUNGSTEN_INGOT.asOne(), null, MUNPOWDER.asOne(),
+                null, SlimefunItems.STEEL_PLATE.asOne(), SlimefunItems.NICKEL_INGOT.asOne()
         );
         assembly(ROCKET_ENGINE, true,
-                null, REINFORCED_CHANNEL, REINFORCED_CHANNEL, REINFORCED_CHANNEL, REINFORCED_CHANNEL, null,
-                null, null, REINFORCED_CHANNEL, REINFORCED_CHANNEL, null, null,
-                null, DIAMOND_CIRCUIT, NOZZLE, NOZZLE, DIAMOND_CIRCUIT, null,
-                null, SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.FLINT_AND_STEEL), new ItemStack(Material.FLINT_AND_STEEL), SlimefunItems.REINFORCED_PLATE, null,
-                SlimefunItems.REINFORCED_PLATE, null, null, null, null, SlimefunItems.REINFORCED_PLATE,
-                SlimefunItems.REINFORCED_PLATE, null, null, null, null, SlimefunItems.REINFORCED_PLATE
+                null, REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), null,
+                null, null, REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), null, null,
+                null, DIAMOND_CIRCUIT.asOne(), NOZZLE.asOne(), NOZZLE.asOne(), DIAMOND_CIRCUIT.asOne(), null,
+                null, SlimefunItems.REINFORCED_PLATE.asOne(), new ItemStack(Material.FLINT_AND_STEEL), new ItemStack(Material.FLINT_AND_STEEL), SlimefunItems.REINFORCED_PLATE.asOne(), null,
+                SlimefunItems.REINFORCED_PLATE.asOne(), null, null, null, null, SlimefunItems.REINFORCED_PLATE.asOne(),
+                SlimefunItems.REINFORCED_PLATE.asOne(), null, null, null, null, SlimefunItems.REINFORCED_PLATE.asOne()
         );
         assembly(ROCKET_ENGINE_2, true,
-                null, REINFORCED_CHANNEL, REINFORCED_CHANNEL, REINFORCED_CHANNEL, REINFORCED_CHANNEL, null,
-                null, null, REINFORCED_CHANNEL, REINFORCED_CHANNEL, null, null,
-                null, DIAMOND_CIRCUIT, NOZZLE, NOZZLE, DIAMOND_CIRCUIT, null,
-                null, SlimefunItems.REINFORCED_PLATE, SPARK_PLUG, SPARK_PLUG, SlimefunItems.REINFORCED_PLATE, null,
-                SlimefunItems.REINFORCED_PLATE, null, null, null, null, SlimefunItems.REINFORCED_PLATE,
-                SlimefunItems.REINFORCED_PLATE, null, null, null, null, SlimefunItems.REINFORCED_PLATE
+                null, REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), null,
+                null, null, REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), null, null,
+                null, DIAMOND_CIRCUIT.asOne(), NOZZLE.asOne(), NOZZLE.asOne(), DIAMOND_CIRCUIT.asOne(), null,
+                null, SlimefunItems.REINFORCED_PLATE.asOne(), SPARK_PLUG.asOne(), SPARK_PLUG.asOne(), SlimefunItems.REINFORCED_PLATE.asOne(), null,
+                SlimefunItems.REINFORCED_PLATE.asOne(), null, null, null, null, SlimefunItems.REINFORCED_PLATE.asOne(),
+                SlimefunItems.REINFORCED_PLATE.asOne(), null, null, null, null, SlimefunItems.REINFORCED_PLATE.asOne()
         );
         assembly(ROCKET_ENGINE_3, true,
-                null, REINFORCED_CHANNEL, REINFORCED_CHANNEL, REINFORCED_CHANNEL, REINFORCED_CHANNEL, null,
-                null, null, REINFORCED_CHANNEL, REINFORCED_CHANNEL, null, null,
-                null, DIAMOND_CIRCUIT, NOZZLE, NOZZLE, DIAMOND_CIRCUIT, null,
-                null, SPACE_GRADE_PLATE, SPARK_PLUG_2, SPARK_PLUG_2, SPACE_GRADE_PLATE, null,
-                SPACE_GRADE_PLATE, null, null, null, null, SPACE_GRADE_PLATE,
-                SPACE_GRADE_PLATE, null, null, null, null, SPACE_GRADE_PLATE
+                null, REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), null,
+                null, null, REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), null, null,
+                null, DIAMOND_CIRCUIT.asOne(), NOZZLE.asOne(), NOZZLE.asOne(), DIAMOND_CIRCUIT.asOne(), null,
+                null, SPACE_GRADE_PLATE.asOne(), SPARK_PLUG_2.asOne(), SPARK_PLUG_2.asOne(), SPACE_GRADE_PLATE.asOne(), null,
+                SPACE_GRADE_PLATE.asOne(), null, null, null, null, SPACE_GRADE_PLATE.asOne(),
+                SPACE_GRADE_PLATE.asOne(), null, null, null, null, SPACE_GRADE_PLATE.asOne()
         );
         assembly(ION_ENGINE, true,
-                SlimefunItems.SOLAR_GENERATOR_4, REINFORCED_CHANNEL, REINFORCED_CHANNEL, REINFORCED_CHANNEL, REINFORCED_CHANNEL, SlimefunItems.SOLAR_GENERATOR_4,
-                null, null, REINFORCED_CHANNEL, REINFORCED_CHANNEL, null, null,
-                null, DIAMOND_CIRCUIT, NOZZLE, NOZZLE, DIAMOND_CIRCUIT, null,
-                null, SPACE_GRADE_PLATE, BLISTERING_VOLCANIC_INGOT, BLISTERING_VOLCANIC_INGOT, SPACE_GRADE_PLATE, null,
-                SPACE_GRADE_PLATE, null, null, null, null, SPACE_GRADE_PLATE,
-                SPACE_GRADE_PLATE, ALUMINUM_COMPOSITE, null, null, ALUMINUM_COMPOSITE, SPACE_GRADE_PLATE
+                SlimefunItems.SOLAR_GENERATOR_4.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), SlimefunItems.SOLAR_GENERATOR_4.asOne(),
+                null, null, REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), null, null,
+                null, DIAMOND_CIRCUIT.asOne(), NOZZLE.asOne(), NOZZLE.asOne(), DIAMOND_CIRCUIT.asOne(), null,
+                null, SPACE_GRADE_PLATE.asOne(), BLISTERING_VOLCANIC_INGOT.asOne(), BLISTERING_VOLCANIC_INGOT.asOne(), SPACE_GRADE_PLATE.asOne(), null,
+                SPACE_GRADE_PLATE.asOne(), null, null, null, null, SPACE_GRADE_PLATE.asOne(),
+                SPACE_GRADE_PLATE.asOne(), ALUMINUM_COMPOSITE.asOne(), null, null, ALUMINUM_COMPOSITE.asOne(), SPACE_GRADE_PLATE.asOne()
                 );
         component(ADVANCED_PROCESSING_UNIT, RecipeType.ENHANCED_CRAFTING_TABLE,
-                REDSTONE_CIRCUIT, GLOWSTONE_CIRCUIT, REDSTONE_CIRCUIT,
-                DIAMOND_CIRCUIT, SlimefunItems.ADVANCED_CIRCUIT_BOARD, DIAMOND_CIRCUIT,
-                REDSTONE_CIRCUIT, LAPIS_CIRCUIT, REDSTONE_CIRCUIT
+                REDSTONE_CIRCUIT.asOne(), GLOWSTONE_CIRCUIT.asOne(), REDSTONE_CIRCUIT.asOne(),
+                DIAMOND_CIRCUIT.asOne(), SlimefunItems.ADVANCED_CIRCUIT_BOARD.asOne(), DIAMOND_CIRCUIT.asOne(),
+                REDSTONE_CIRCUIT.asOne(), LAPIS_CIRCUIT.asOne(), REDSTONE_CIRCUIT.asOne()
         );
         assembly(LIFE_SUPPORT_MODULE,
-                SlimefunItems.STEEL_INGOT, SlimefunItems.STEEL_INGOT, REINFORCED_CHANNEL, REINFORCED_CHANNEL, SlimefunItems.STEEL_INGOT, SlimefunItems.STEEL_INGOT,
-                SlimefunItems.STEEL_INGOT, ADVANCED_PROCESSING_UNIT, REINFORCED_CHANNEL, REINFORCED_CHANNEL, ADVANCED_PROCESSING_UNIT, SlimefunItems.STEEL_INGOT,
-                SlimefunItems.STEEL_INGOT, LAPIS_CIRCUIT, OXYGEN_REGENERATOR, OXYGEN_REGENERATOR, LAPIS_CIRCUIT, SlimefunItems.STEEL_INGOT,
-                SlimefunItems.STEEL_INGOT, LAPIS_CIRCUIT, OXYGEN_REGENERATOR, OXYGEN_REGENERATOR, LAPIS_CIRCUIT, SlimefunItems.STEEL_INGOT,
-                SlimefunItems.STEEL_INGOT, ADVANCED_PROCESSING_UNIT, REINFORCED_CHANNEL, REINFORCED_CHANNEL, ADVANCED_PROCESSING_UNIT, SlimefunItems.STEEL_INGOT,
-                SlimefunItems.STEEL_INGOT, SlimefunItems.STEEL_INGOT, REINFORCED_CHANNEL, REINFORCED_CHANNEL, SlimefunItems.STEEL_INGOT, SlimefunItems.STEEL_INGOT
+                SlimefunItems.STEEL_INGOT.asOne(), SlimefunItems.STEEL_INGOT.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), SlimefunItems.STEEL_INGOT.asOne(), SlimefunItems.STEEL_INGOT.asOne(),
+                SlimefunItems.STEEL_INGOT.asOne(), ADVANCED_PROCESSING_UNIT.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), ADVANCED_PROCESSING_UNIT.asOne(), SlimefunItems.STEEL_INGOT.asOne(),
+                SlimefunItems.STEEL_INGOT.asOne(), LAPIS_CIRCUIT.asOne(), OXYGEN_REGENERATOR.asOne(), OXYGEN_REGENERATOR.asOne(), LAPIS_CIRCUIT.asOne(), SlimefunItems.STEEL_INGOT.asOne(),
+                SlimefunItems.STEEL_INGOT.asOne(), LAPIS_CIRCUIT.asOne(), OXYGEN_REGENERATOR.asOne(), OXYGEN_REGENERATOR.asOne(), LAPIS_CIRCUIT.asOne(), SlimefunItems.STEEL_INGOT.asOne(),
+                SlimefunItems.STEEL_INGOT.asOne(), ADVANCED_PROCESSING_UNIT.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), ADVANCED_PROCESSING_UNIT.asOne(), SlimefunItems.STEEL_INGOT.asOne(),
+                SlimefunItems.STEEL_INGOT.asOne(), SlimefunItems.STEEL_INGOT.asOne(), REINFORCED_CHANNEL.asOne(), REINFORCED_CHANNEL.asOne(), SlimefunItems.STEEL_INGOT.asOne(), SlimefunItems.STEEL_INGOT.asOne()
         );
         assembly(NOSE_CONE, true,
                 null, null, new ItemStack(Material.REDSTONE_TORCH), new ItemStack(Material.REDSTONE_TORCH), null, null,
-                null, null, ALUMINUM_COMPOSITE, ALUMINUM_COMPOSITE, null, null,
-                null, ALUMINUM_COMPOSITE, GLOWSTONE_CIRCUIT, GLOWSTONE_CIRCUIT, ALUMINUM_COMPOSITE, null,
-                ALUMINUM_COMPOSITE, null, null, null, null, ALUMINUM_COMPOSITE,
-                ALUMINUM_COMPOSITE, null, null, null, null, ALUMINUM_COMPOSITE,
-                ALUMINUM_COMPOSITE, null, null, null, null, ALUMINUM_COMPOSITE
+                null, null, ALUMINUM_COMPOSITE.asOne(), ALUMINUM_COMPOSITE.asOne(), null, null,
+                null, ALUMINUM_COMPOSITE.asOne(), GLOWSTONE_CIRCUIT.asOne(), GLOWSTONE_CIRCUIT.asOne(), ALUMINUM_COMPOSITE.asOne(), null,
+                ALUMINUM_COMPOSITE.asOne(), null, null, null, null, ALUMINUM_COMPOSITE.asOne(),
+                ALUMINUM_COMPOSITE.asOne(), null, null, null, null, ALUMINUM_COMPOSITE.asOne(),
+                ALUMINUM_COMPOSITE.asOne(), null, null, null, null, ALUMINUM_COMPOSITE.asOne()
         );
         component(FUEL_TANK, RecipeType.ENHANCED_CRAFTING_TABLE,
-                HEAVY_DUTY_SHEET, HEAVY_DUTY_SHEET, HEAVY_DUTY_SHEET,
-                HEAVY_DUTY_SHEET, null, HEAVY_DUTY_SHEET,
-                HEAVY_DUTY_SHEET, HEAVY_DUTY_SHEET, HEAVY_DUTY_SHEET
+                HEAVY_DUTY_SHEET.asOne(), HEAVY_DUTY_SHEET.asOne(), HEAVY_DUTY_SHEET.asOne(),
+                HEAVY_DUTY_SHEET.asOne(), null, HEAVY_DUTY_SHEET.asOne(),
+                HEAVY_DUTY_SHEET.asOne(), HEAVY_DUTY_SHEET.asOne(), HEAVY_DUTY_SHEET.asOne()
         );
         component(FUEL_TANK_2, RecipeType.ENHANCED_CRAFTING_TABLE,
-                ULTRA_DUTY_SHEET, ULTRA_DUTY_SHEET, ULTRA_DUTY_SHEET,
-                ULTRA_DUTY_SHEET, null, ULTRA_DUTY_SHEET,
-                ULTRA_DUTY_SHEET, ULTRA_DUTY_SHEET, ULTRA_DUTY_SHEET
+                ULTRA_DUTY_SHEET.asOne(), ULTRA_DUTY_SHEET.asOne(), ULTRA_DUTY_SHEET.asOne(),
+                ULTRA_DUTY_SHEET.asOne(), null, ULTRA_DUTY_SHEET.asOne(),
+                ULTRA_DUTY_SHEET.asOne(), ULTRA_DUTY_SHEET.asOne(), ULTRA_DUTY_SHEET.asOne()
         );
-        component(DIAMOND_CIRCUIT, CircuitPress.TYPE, new ItemStack(Material.DIAMOND_BLOCK), SlimefunItems.SILICON);
-        component(REDSTONE_CIRCUIT, CircuitPress.TYPE, new ItemStack(Material.REDSTONE_BLOCK), SlimefunItems.SILICON);
-        component(LAPIS_CIRCUIT, CircuitPress.TYPE, new ItemStack(Material.LAPIS_BLOCK), SlimefunItems.SILICON);
-        component(GLOWSTONE_CIRCUIT, CircuitPress.TYPE, new ItemStack(Material.GLOWSTONE), SlimefunItems.SILICON);
+        component(DIAMOND_CIRCUIT, CircuitPress.TYPE, new ItemStack(Material.DIAMOND_BLOCK), SlimefunItems.SILICON.asOne());
+        component(REDSTONE_CIRCUIT, CircuitPress.TYPE, new ItemStack(Material.REDSTONE_BLOCK), SlimefunItems.SILICON.asOne());
+        component(LAPIS_CIRCUIT, CircuitPress.TYPE, new ItemStack(Material.LAPIS_BLOCK), SlimefunItems.SILICON.asOne());
+        component(GLOWSTONE_CIRCUIT, CircuitPress.TYPE, new ItemStack(Material.GLOWSTONE), SlimefunItems.SILICON.asOne());
 
         component(MUNPOWDER, CoreRecipeType.ALIEN_DROP,
                 null, null, null,
-                null, new CustomItemStack(Material.CREEPER_HEAD, "&fMutant Creeper")
+                null, CustomItemStack.create(Material.CREEPER_HEAD, "&fMutant Creeper")
         );
-        component(ENDER_BLOCK, DiamondAnvil.TYPE, new ItemStack(Material.ENDER_PEARL, 16), BLISTERING_VOLCANIC_INGOT);
-        component(LUNAR_GLASS, RecipeType.SMELTERY, new ItemStack(Material.SAND), MOON_DUST);
-        component(TUNGSTEN_CARBIDE, RecipeType.SMELTERY, TUNGSTEN_INGOT, SlimefunItems.COMPRESSED_CARBON);
+        component(ENDER_BLOCK, DiamondAnvil.TYPE, new ItemStack(Material.ENDER_PEARL, 16), BLISTERING_VOLCANIC_INGOT.asOne());
+        component(LUNAR_GLASS, RecipeType.SMELTERY, new ItemStack(Material.SAND), MOON_DUST.asOne());
+        component(TUNGSTEN_CARBIDE, RecipeType.SMELTERY, TUNGSTEN_INGOT.asOne(), SlimefunItems.COMPRESSED_CARBON.asOne());
         assembly(DIAMOND_ANVIL_CELL,
-                TUNGSTEN_CARBIDE, TUNGSTEN_CARBIDE, TUNGSTEN_CARBIDE, TUNGSTEN_CARBIDE, TUNGSTEN_CARBIDE, TUNGSTEN_CARBIDE,
-                SlimefunItems.SYNTHETIC_DIAMOND, SlimefunItems.CARBONADO, SlimefunItems.CARBONADO, SlimefunItems.CARBONADO, SlimefunItems.CARBONADO, SlimefunItems.SYNTHETIC_DIAMOND,
-                null, SlimefunItems.SYNTHETIC_DIAMOND, SlimefunItems.CARBONADO, SlimefunItems.CARBONADO, SlimefunItems.SYNTHETIC_DIAMOND, null,
-                null, SlimefunItems.SYNTHETIC_DIAMOND, SlimefunItems.CARBONADO, SlimefunItems.CARBONADO, SlimefunItems.SYNTHETIC_DIAMOND, null,
-                SlimefunItems.SYNTHETIC_DIAMOND, SlimefunItems.CARBONADO, SlimefunItems.CARBONADO, SlimefunItems.CARBONADO, SlimefunItems.CARBONADO, SlimefunItems.SYNTHETIC_DIAMOND,
-                TUNGSTEN_CARBIDE, TUNGSTEN_CARBIDE, TUNGSTEN_CARBIDE, TUNGSTEN_CARBIDE, TUNGSTEN_CARBIDE, TUNGSTEN_CARBIDE
+                TUNGSTEN_CARBIDE.asOne(), TUNGSTEN_CARBIDE.asOne(), TUNGSTEN_CARBIDE.asOne(), TUNGSTEN_CARBIDE.asOne(), TUNGSTEN_CARBIDE.asOne(), TUNGSTEN_CARBIDE.asOne(),
+                SlimefunItems.SYNTHETIC_DIAMOND.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.SYNTHETIC_DIAMOND.asOne(),
+                null, SlimefunItems.SYNTHETIC_DIAMOND.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.SYNTHETIC_DIAMOND.asOne(), null,
+                null, SlimefunItems.SYNTHETIC_DIAMOND.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.SYNTHETIC_DIAMOND.asOne(), null,
+                SlimefunItems.SYNTHETIC_DIAMOND.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.CARBONADO.asOne(), SlimefunItems.SYNTHETIC_DIAMOND.asOne(),
+                TUNGSTEN_CARBIDE.asOne(), TUNGSTEN_CARBIDE.asOne(), TUNGSTEN_CARBIDE.asOne(), TUNGSTEN_CARBIDE.asOne(), TUNGSTEN_CARBIDE.asOne(), TUNGSTEN_CARBIDE.asOne()
         );
 
-        component(BLISTERING_VOLCANIC_INGOT, DiamondAnvil.TYPE, VOLCANIC_INGOT, SlimefunItems.BLISTERING_INGOT_3);
+        component(BLISTERING_VOLCANIC_INGOT, DiamondAnvil.TYPE, VOLCANIC_INGOT.asOne(), SlimefunItems.BLISTERING_INGOT_3.asOne());
         new UnplaceableBlock(CoreItemGroup.ITEMS, FUSION_PELLET, DiamondAnvil.TYPE, new ItemStack[] {
-                BLISTERING_VOLCANIC_INGOT, new SlimefunItemStack(MOON_DUST, 8)
-        }, new SlimefunItemStack(FUSION_PELLET, 8)).register(Galactifun.instance());
+                BLISTERING_VOLCANIC_INGOT.asOne(), MOON_DUST.asQuantity(8)
+        }, FUSION_PELLET.asQuantity(8)).register(Galactifun.instance());
 
-        component(LASERITE_DUST, true, RecipeType.ORE_CRUSHER, LASERITE_ORE);
-        component(LASERITE, DiamondAnvil.TYPE, new SlimefunItemStack(LASERITE_DUST, 12));
+        component(LASERITE_DUST, true, RecipeType.ORE_CRUSHER, LASERITE_ORE.asOne());
+        component(LASERITE, DiamondAnvil.TYPE, LASERITE_DUST.asQuantity(12));
 
         new MoonCheese(CoreItemGroup.ITEMS, MOON_CHEESE, CoreRecipeType.WORLD_GEN, new ItemStack[]{
                 BaseUniverse.THE_MOON.item()
@@ -476,25 +476,25 @@ public final class BaseMats {
         // SlimefunWarfare integration
         SlimefunItem diode = SlimefunItem.getById("LASER_DIODE");
         if (diode != null) {
-            DiamondAnvil.TYPE.register(new ItemStack[] { diode.getItem().asQuantity(12), null }, LASERITE);
+            DiamondAnvil.TYPE.register(new ItemStack[] { diode.getItem().asQuantity(12), null }, LASERITE.asOne());
         }
 
         RecipeType.GRIND_STONE.register(
-                Arrays.copyOf(new ItemStack[] { SULFUR_BLOCK }, 9),
-                new SlimefunItemStack(SlimefunItems.SULFATE, 9)
+                Arrays.copyOf(new ItemStack[] { SULFUR_BLOCK.asOne() }, 9),
+                SlimefunItems.SULFATE.asQuantity(9)
         );
         RecipeType.GRIND_STONE.register(
-                Arrays.copyOf(new ItemStack[] { MARS_ROCK }, 9),
-                new SlimefunItemStack(MARS_DUST, 4)
+                Arrays.copyOf(new ItemStack[] { MARS_ROCK.asOne() }, 9),
+                MARS_DUST.asQuantity(4)
         );
         RecipeType.GRIND_STONE.register(
-                Arrays.copyOf(new ItemStack[] { MOON_ROCK }, 9),
-                new SlimefunItemStack(MOON_DUST, 4)
+                Arrays.copyOf(new ItemStack[] { MOON_ROCK.asOne() }, 9),
+                MOON_DUST.asQuantity(4)
         );
 
         RecipeType.SMELTERY.register(
-                Arrays.copyOf(new ItemStack[] { METHANE_ICE }, 9),
-                new SlimefunItemStack(Gas.METHANE.item(), 4)
+                Arrays.copyOf(new ItemStack[] { METHANE_ICE.asOne() }, 9),
+                Gas.METHANE.item().asQuantity(4)
         );
     }
 
@@ -511,7 +511,7 @@ public final class BaseMats {
     }
 
     private static void component(SlimefunItemStack item, RecipeType type, int output, ItemStack... recipe) {
-        new SlimefunItem(CoreItemGroup.COMPONENTS, item, type, recipe, new SlimefunItemStack(item, output)).register(Galactifun.instance());
+        new SlimefunItem(CoreItemGroup.COMPONENTS, item, type, recipe, item.asQuantity(output)).register(Galactifun.instance());
     }
 
     private static void assembly(SlimefunItemStack item, boolean unplaceable, ItemStack... recipe) {
