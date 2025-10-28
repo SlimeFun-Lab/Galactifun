@@ -33,7 +33,6 @@ import io.github.mooy1.infinitylib.core.AbstractAddon;
 import io.github.mooy1.infinitylib.metrics.bukkit.Metrics;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 
 
@@ -101,10 +100,6 @@ public final class Galactifun extends AbstractAddon {
 
         new Metrics(this, 11613);
 
-        if (!isTest && this.getConfig().getBoolean("auto-update") && !getPluginVersion().contains("MODIFIED")) {
-            new BlobBuildUpdater(this, this.getFile(), "Galactifun").start();
-        }
-
         this.alienManager = new AlienManager(this);
         this.worldManager = new WorldManager(this);
         this.protectionManager = new ProtectionManager();
@@ -151,7 +146,7 @@ public final class Galactifun extends AbstractAddon {
     public void load() {
         if (!isTest) {
             // Default to not logging world settings
-            Bukkit.spigot().getConfig().set("world-settings.default.verbose", false);
+            getLogger().fine("Tip: set 'world-settings.default.verbose: false' in spigot.yml to disable verbose world logs.");
         }
     }
 
